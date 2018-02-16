@@ -4,27 +4,17 @@
 
 ## Структура?
 
-|---- Build
-
-|     |---- .gitignore
-
-|
-
-|---- Source
-
-|     |---- *.h
-
-|     |---- *.cpp
-
-|
-
-|---- libs
-
-|
-
-|---- images
-
-|---- CMakeLists.txt
+|---- Build  
+|     |---- .gitignore  
+|  
+|---- Source  
+|     |---- *.h  
+|     |---- *.cpp  
+|  
+|---- libs  
+|  
+|---- images  
+|---- CMakeLists.txt  
 
 ### Слияние «Разделяй и властвуй»
 
