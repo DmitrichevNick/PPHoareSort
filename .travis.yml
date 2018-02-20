@@ -1,1 +1,10 @@
-language: rust
+language: cpp
+
+os:
+    - linux
+    - osx
+    
+compiler:
+    - minGW
+    - gcc
+    - clang
