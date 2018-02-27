@@ -1,10 +1,15 @@
 language: cpp
-
 os:
     - linux
     - osx
     
 compiler:
-    - minGW
     - gcc
     - clang
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake-data
+      - cmake
