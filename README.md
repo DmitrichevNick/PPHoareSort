@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DmitrichevNick/PPHoareSort.svg?branch=master)](https://travis-ci.org/DmitrichevNick/PPHoareSort)
+
 # PPHoareSort
 
 # Сортировка хоара со слиянием "Разделяй и влавствуй"
