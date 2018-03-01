@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#incude <cstdio>
+#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include "sol.cpp"
