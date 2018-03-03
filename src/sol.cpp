@@ -2,7 +2,7 @@ void hoaraSort(int*&, int, int);
 void IHoaraSort(int*&,const int);
 
 void IHoaraSort(int* &arr,const int sizeArr){
-    hoaraSort(arr,0,sizeArr);
+    hoaraSort(arr,0,sizeArr-1);
 }
 void hoaraSort(int* &arr, int first, int last){
 

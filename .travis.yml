@@ -11,4 +11,6 @@ before_script:
 script:
   - cmake ..
   - make
+  - cp ../src/numbers.in src
+  - lab.exe
   

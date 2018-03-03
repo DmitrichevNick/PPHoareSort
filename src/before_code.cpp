@@ -1,36 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <cstdio>
 #include <fstream>
 #include <iostream>
+#include <new>
 #include "sol.cpp"
 
 using namespace std;
 
 int main()
 {
-  cout << "Making array\n" << endl;
-  FILE* fi=fopen("numbers.in","rb");
+   FILE *fIn=NULL,
+        *fOut=NULL;
+   fIn=fopen("numbers.in","rb");
+   fOut=fopen("numbers.out","wb");
 
-  int N=0;
-  fread(&N, sizeof (int), 1, fi);
+   int N=0,
+       *numbers=NULL;
+   if((fread(&N,sizeof(int),1,fIn))!=1)
+     cout<<"ERROR\n";
+   else {
+       numbers=new int[N];
+    if(numbers==NULL || (fread(numbers,sizeof(*numbers),N,fIn))!=N)
+       cout<<"ERROR\n";
+     }
+    for(int i=0;i<N;++i)
+      cout<<numbers[i]<<' ';
+    cout<<endl;
+   IHoaraSort(numbers,N);
+   for(int i=0;i<N;++i)
+     cout<<numbers[i]<<' ';
+   cout<<endl;
+   fwrite(numbers,sizeof(*numbers),N,fOut);
 
-  int* ar=new int[N];
-  fread(ar, sizeof (int)*N, N, fi);
-  fclose(fi);
-  cout << "The array:\n" << endl;
-  for(int i=0;i<N;++i){
-          cout<<ar[i]<<' ';
-      }
-  cout << "\nSorting\n" << endl;
-  IHoaraSort(ar,N);
-  cout << "The sorted array:\n" << endl;
-  for(int i=0;i<N;++i)
-          cout<<ar[i]<<' ';
-  FILE* fo=fopen("numbers.out","wb");
-  fwrite(ar, sizeof (int)*N, N, fo);
+   if(fIn)
+     fclose(fIn);
+   if (fOut)
+     fclose(fOut);
+   delete[] numbers;
+   system("pause");
 
-  fclose(fo);
-  //free(ar);?????????????
-  return 0;
+   return 0;
 }
