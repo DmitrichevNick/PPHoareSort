@@ -14,5 +14,5 @@ script:
   - cp ../src/numbers.in src
   - cd src
   - ls
-
+  - lab
   

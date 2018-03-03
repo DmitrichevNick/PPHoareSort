@@ -37,7 +37,6 @@ int main()
    if (fOut)
      fclose(fOut);
    delete[] numbers;
-   system("pause");
 
    return 0;
 }
