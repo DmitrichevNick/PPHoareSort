@@ -3,6 +3,4 @@ cmake_minimum_required(VERSION 2.8)
 set(GEN_PRO_NAME "lab")
 project(${GEN_PRO_NAME})
 
-set(CMAKE_EXE_LINKER_FLAGS "-static ../../Tools/mingw530_32/bin/libgcc_s_dw2-1.dll -static ../../Tools/mingw530_32/bin/libstdc++-6.dll")
-
 add_subdirectory(src)
