@@ -12,5 +12,6 @@ script:
   - cmake ..
   - make
   - cp ../src/numbers.in src
+  - cd src
   - lab.exe
   
