@@ -13,11 +13,12 @@ script:
   - make
   - cp ../src/numbers.in src
   - cp ../src/1.txt typerANDviewer
-  - ./src/lab
-  - cp ./src/numbers.out ./src/typerANDviewer
-  - cd src/typerANDviewer
+  - cd src
+  - ./lab
+  - cp numbers.out typerANDviewer
+  - cd typerANDviewer
   - ./typer 1.txt
-  - cat 1.txt > echo
+  - echo | cat 1.txt
   - ./viewer 2.txt
-  - cat 2.txt > echo
+  - echo | cat 2.txt
   
