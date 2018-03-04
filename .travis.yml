@@ -12,7 +12,11 @@ script:
   - cmake ..
   - make
   - cp ../src/numbers.in src
-  - cd src
-  - ls
-  - ./lab
+  - cp ../src/1.txt typerANDviewer
+  - ./src/lab
+  - cp ./src/numbers.out ./src/typerANDviewer
+  - ./src/typerANDviewer/typer 1.txt
+  - echo ./src/typerANDviewer/1.txt
+  - ./src/typerANDviewer/viewer 2.txt
+  - echo ./src/typerANDviewer/2.txt
   
