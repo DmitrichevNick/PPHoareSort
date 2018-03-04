@@ -30,6 +30,7 @@ int main()
    for(int i=0;i<N;++i)
      cout<<numbers[i]<<' ';
    cout<<endl;
+   fwrite(&N,sizeof(N),1,fOut);
    fwrite(numbers,sizeof(*numbers),N,fOut);
 
    if(fIn)

@@ -15,8 +15,9 @@ script:
   - cp ../src/1.txt typerANDviewer
   - ./src/lab
   - cp ./src/numbers.out ./src/typerANDviewer
-  - ./src/typerANDviewer/typer 1.txt
-  - echo ./src/typerANDviewer/1.txt
-  - ./src/typerANDviewer/viewer 2.txt
-  - echo ./src/typerANDviewer/2.txt
+  - cd src/typerANDviewer
+  - ./typer 1.txt
+  - cat 1.txt > echo
+  - ./viewer 2.txt
+  - cat 2.txt > echo
   
