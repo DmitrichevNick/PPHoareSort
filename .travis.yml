@@ -12,7 +12,7 @@ script:
   - cmake ..
   - make
   - cp ../src/numbers.in src
-  - cp ../src/1.txt typerANDviewer
+  - cp ../src/1.txt src/typerANDviewer
   - cd src
   - ./lab
   - cp numbers.out typerANDviewer
