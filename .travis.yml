@@ -1,9 +1,4 @@
 language: cpp
-sudo: required
-addons:
-    apt:
-        packages:
-            - libomp
 compiler: 
 - gcc
 - clang
