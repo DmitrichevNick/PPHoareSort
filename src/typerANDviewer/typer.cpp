@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
   FILE* outFile=fopen("numbers.in","wb");
   inFile.open(argv[1]);
   if (inFile.fail()) {
-      cout<<"\n Ошибка открытия файла";
+      cout << argv[0] << "\n  ERROR: can not open 'numbers.in'\n";
       exit(1);
   }
   int curNum;

@@ -5,6 +5,8 @@ project(${GEN_PRO_NAME})
 
 add_subdirectory("typerANDviewer")
 
+set(CMAKE_EXE_LINKER_FLAGS "-fopenmp")
+ 
 add_library(${PROJECT_NAME}seq STATIC "sol.cpp")
 
 add_executable(${PROJECT_NAME} "before_code.cpp")

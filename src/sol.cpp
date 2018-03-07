@@ -1,3 +1,8 @@
+enum LOG_STATE {
+  OK,
+  ERROR
+};
+
 void hoaraSort(int*&, int, int);
 void IHoaraSort(int*&,const int);
 
@@ -6,32 +11,32 @@ void IHoaraSort(int* &arr,const int sizeArr){
 }
 void hoaraSort(int* &arr, int first, int last){
 
-    int i = first,
-        j = last,
+    int leftIndex = first,
+        rightIndex = last,
         tmp,
         x = arr[(first + last) / 2];
 
     do {
-       while (arr[i] < x)
-         i++;
-       while (arr[j] > x)
-         j--;
+       while (arr[leftIndex] < x)
+         leftIndex++;
+       while (arr[rightIndex] > x)
+         rightIndex--;
 
-       if (i <= j)
+       if (leftIndex <= rightIndex)
        {
-         if (i < j)
+         if (leftIndex < rightIndex)
          {
-           tmp=arr[i];
-           arr[i]=arr[j];
-           arr[j]=tmp;
+           tmp=arr[leftIndex];
+           arr[leftIndex]=arr[rightIndex];
+           arr[rightIndex]=tmp;
          }
-         i++;
-         j--;
+         leftIndex++;
+         rightIndex--;
        }
-    } while (i <= j);
+    } while (leftIndex <= rightIndex);
 
-    if (i < last)
-       hoaraSort(arr, i, last);
-    if (first < j)
-       hoaraSort(arr, first,j);
+    if (leftIndex < last)
+       hoaraSort(arr, leftIndex, last);
+    if (first < rightIndex)
+       hoaraSort(arr, first,rightIndex);
 }
