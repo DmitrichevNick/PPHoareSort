@@ -4,8 +4,8 @@ set(GEN_PRO_NAME "lab")
 project(${GEN_PRO_NAME})
 
 add_subdirectory("typerANDviewer")
-
-set(CMAKE_EXE_LINKER_FLAGS "-fopenmp -lgomp")
+set(CMAKE_EXE_COMPILE_FLAGS "-fopenmp=libiomp5 -lgomp")
+set(CMAKE_EXE_LINKER_FLAGS "-fopenmp=libiomp5 -lgomp")
  
 add_library(${PROJECT_NAME}seq STATIC "sol.cpp")
 
