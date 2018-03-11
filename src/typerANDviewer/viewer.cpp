@@ -8,11 +8,15 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+  if (argc != 3) {
+      cout << argv[0] << "\n  ERROR: not enough arguments\n";
+      exit(1);
+  }
   ofstream outFile;
-  FILE* inFile=fopen("numbers.out","rb");
-  outFile.open(argv[1]);
+  FILE* inFile=fopen(argv[1],"rb");
+  outFile.open(argv[2]);
   if (outFile.fail()) {
-      cout << argv[0] << "\n  ERROR: can not open 'numbers.out'\n";
+      cout << argv[0] << "\n  ERROR: can not open '"<<argv[2]<<"'\n";
       exit(1);
   }
   int curNum;

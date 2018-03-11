@@ -10,14 +10,18 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+  if (argc != 3) {
+      cout << argv[0] << "\n  ERROR: not enough arguments\n";
+      exit(1);
+  }
    FILE *fIn = NULL,
         *fOut = NULL;
-   if ((fIn = fopen("numbers.in", "rb")) == NULL) {
-     cout << argv[0] << "\n  ERROR: can not open 'numbers.in'\n\n";
+   if ((fIn = fopen(argv[1], "rb")) == NULL) {
+     cout << argv[0] << "\n  ERROR: can not open '"<<argv[1]<<"'\n\n";
      exit(1);
      }
-   if ((fOut = fopen("numbers.out", "wb")) == NULL) {
-     cout << argv[0] << "\n  ERROR: can not open 'numbers.out'\n\n";
+   if ((fOut = fopen(argv[2], "wb")) == NULL) {
+     cout << argv[0] << "\n  ERROR: can not open '"<<argv[2]<<"'\n\n";
      exit(2);
      }
    int N = 0,
@@ -29,7 +33,7 @@ int main(int argc, char* argv[])
    else {
        numbers = new int[N];
     if (numbers == NULL || (fread(numbers, sizeof(*numbers), N, fIn)) != N) {
-       cout << argv[0] << "\n  ERROR: can not read the array from 'numbers.in'\n\n";
+       cout << argv[0] << "\n  ERROR: can not read the array from '"<<argv[1]<<"'\n\n";
        if (numbers!=NULL)
          delete[] numbers;
        exit(4);
@@ -63,14 +67,14 @@ int main(int argc, char* argv[])
    if (fIn)
      fclose(fIn);
    else {
-     cout << argv[0] << "\n  ERROR: can not close 'numbers.in'\n\n";
+     cout << argv[0] << "\n  ERROR: can not close '"<<argv[1]<<"'\n\n";
      delete[] numbers;
      exit(8);
      }
    if (fOut)
      fclose(fOut);
    else {
-     cout << argv[0] << "\n  ERROR: can not close 'numbers.out'\n\n";
+     cout << argv[0] << "\n  ERROR: can not close '"<<argv[2]<<"'\n\n";
      delete[] numbers;
      exit(1);
      }

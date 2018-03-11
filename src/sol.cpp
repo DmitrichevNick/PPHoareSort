@@ -6,9 +6,7 @@ enum LOG_STATE {
 void hoaraSort(int*&, int, int);
 void IHoaraSort(int*&,const int);
 
-void IHoaraSort(int* &arr,const int sizeArr){
-    hoaraSort(arr,0,sizeArr-1);
-}
+
 void hoaraSort(int* &arr, int first, int last){
 
     int leftIndex = first,
@@ -39,4 +37,8 @@ void hoaraSort(int* &arr, int first, int last){
        hoaraSort(arr, leftIndex, last);
     if (first < rightIndex)
        hoaraSort(arr, first,rightIndex);
+}
+
+void IHoaraSort(int* &arr,const int sizeArr){
+    hoaraSort(arr,0,sizeArr-1);
 }
