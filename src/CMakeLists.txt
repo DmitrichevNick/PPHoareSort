@@ -5,6 +5,7 @@ set(GEN_PRO_NAME "lab")
 project(${GEN_PRO_NAME})
 
 add_subdirectory("typerANDviewer")
+add_subdirectory("generator")
 set(CMAKE_EXE_COMPILE_FLAGS "-fopenmp=libiomp5 -lgomp")
 set(CMAKE_EXE_LINKER_FLAGS "-fopenmp -lgomp")
 
