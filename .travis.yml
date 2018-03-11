@@ -13,7 +13,7 @@ script:
   - ./generator n 20 out
   - cd ../
   - cp generator/out ./
-  - ./lab out nextout
+  - ./solver out nextout
   - cp nextout typerANDviewer
   - cd typerANDviewer
   - ./viewer nextout watchout

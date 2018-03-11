@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 
 SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")
-set(GEN_PRO_NAME "lab")
+set(GEN_PRO_NAME "solver")
 project(${GEN_PRO_NAME})
 
 add_subdirectory("typerANDviewer")
 add_subdirectory("generator")
+add_subdirectory("checker")
+
 set(CMAKE_EXE_COMPILE_FLAGS "-fopenmp=libiomp5 -lgomp")
 set(CMAKE_EXE_LINKER_FLAGS "-fopenmp -lgomp")
 
