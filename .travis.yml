@@ -10,7 +10,7 @@ script:
   - cmake ..
   - make
   - cd src/generator
-  - ./generator n 20 out
+  - ./generator 20 out
   - cd ../
   - cp generator/out ./
   - ./solver out nextout
