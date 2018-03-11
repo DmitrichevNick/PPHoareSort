@@ -9,14 +9,14 @@ before_script:
 script:
   - cmake ..
   - make
-  - cp ../src/numbers.in src
-  - cp ../src/1.txt src/typerANDviewer
-  - cd src
-  - ./lab
-  - cp numbers.out typerANDviewer
+  - cd src/generator
+  - ./generator n 20 out
+  - cd ../
+  - cp generator/out ./
+  - ./lab out nextout
+  - cp nextout typerANDviewer
   - cd typerANDviewer
-  - ./typer 1.txt
-  - echo | cat 1.txt
-  - ./viewer 2.txt
-  - echo | cat 2.txt
+  - ./viewer nextout watchout
+  - echo | cat watchout
+ 
   
