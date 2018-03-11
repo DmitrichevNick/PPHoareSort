@@ -1,10 +1,5 @@
-enum LOG_STATE {
-  OK,
-  ERROR
-};
-
-void hoaraSort(int*&, int, int);
-void IHoaraSort(int*&,const int);
+//void hoaraSort(int*&, int, int);
+//void IHoaraSort(int*&,const int);
 
 
 void hoaraSort(int* &arr, int first, int last){

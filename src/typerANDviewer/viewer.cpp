@@ -19,17 +19,21 @@ int main(int argc, char* argv[])
       cout << argv[0] << "\n  ERROR: can not open '"<<argv[2]<<"'\n";
       exit(1);
   }
+
   int curNum;
   int size=0;
   double time=0;
+
+  fread(&time,sizeof(time),1,inFile);
+  outFile<<time<<endl;
   fread(&size,sizeof(size),1,inFile);
   outFile<<size<<endl;
   for(int i=0;i<size;++i){
       fread(&curNum,sizeof(curNum),1,inFile);
       outFile<<curNum<<" ";
     }
-  fread(&time,sizeof(time),1,inFile);
-  outFile<<endl<<time<<endl;
+  outFile<<endl;
+
   outFile.close();
   fclose(inFile);
 

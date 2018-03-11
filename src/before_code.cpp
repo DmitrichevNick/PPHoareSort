@@ -10,10 +10,10 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-  if (argc != 3) {
+   if (argc != 3) {
       cout << argv[0] << "\n  ERROR: not enough arguments\n";
       exit(1);
-  }
+   }
    FILE *fIn = NULL,
         *fOut = NULL;
    if ((fIn = fopen(argv[1], "rb")) == NULL) {
@@ -39,15 +39,17 @@ int main(int argc, char* argv[])
        exit(4);
        }
      }
-   /* for (int i=0; i<N; ++i)
-      cout << numbers[i] << ' ';
-    cout<<endl; */
+
    double time = omp_get_wtime();
    IHoaraSort(numbers, N); // the seq. hoara sort
    time = omp_get_wtime() - time;
-   /*for(int i=0;i<N;++i)
-     cout<<numbers[i]<<' ';
-   cout<<endl;*/
+
+   if ((fwrite(&time, sizeof(time), 1, fOut)) != 1) {
+      cout << argv[0] << "\n  ERROR: the time hadn't been written\n\n";
+      delete[] numbers;
+      exit(4);
+      }
+
    if ((fwrite(&N, sizeof(N), 1, fOut)) != 1) {
       cout << argv[0] << "\n  ERROR: the size of the array hadn't been written\n\n";
       delete[] numbers;
@@ -56,29 +58,25 @@ int main(int argc, char* argv[])
    if ((fwrite(numbers, sizeof(*numbers), N, fOut)) != N) {
       cout << argv[0] << "\n  ERROR: the array hadn't been written\n\n";
       delete[] numbers;
-      exit(6);
+      exit(5);
       }
-   if ((fwrite(&time, sizeof(time), 1, fOut)) != 1) {
-      cout << argv[0] << "\n  ERROR: the time hadn't been written\n\n";
-      delete[] numbers;
-      exit(7);
-      }
+
 
    if (fIn)
      fclose(fIn);
    else {
      cout << argv[0] << "\n  ERROR: can not close '"<<argv[1]<<"'\n\n";
      delete[] numbers;
-     exit(8);
+     exit(6);
      }
    if (fOut)
      fclose(fOut);
    else {
      cout << argv[0] << "\n  ERROR: can not close '"<<argv[2]<<"'\n\n";
      delete[] numbers;
-     exit(1);
+     exit(7);
      }
    delete[] numbers;
-    cout<< argv[0]<<"\n  OK\n\n";
+    cout<< argv[0]<<"\n  OK\n";
    return 0;
 }
