@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
   }
 
   int N = atoi(argv[1]);
-  int* ar = genFunc(N);
+  double* ar = genFunc(N);
 
   FILE* outFile=fopen(argv[2],"wb");
   fwrite(&N,sizeof(N),1,outFile);

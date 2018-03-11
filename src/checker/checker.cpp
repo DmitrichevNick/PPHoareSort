@@ -15,8 +15,8 @@ int main (int argc, char* argv[])
   // fread(&N, sizeof (N), 1, bui);
    fread(&res_time, sizeof (res_time), 1, buo);
    fread(&N, sizeof (N), 1, buo);
-   int *ans = new int[N],
-       *res = new int[N];
+   double *ans = new double[N],
+       *res = new double[N];
 
    fread(res, sizeof (*res), N, buo);
 

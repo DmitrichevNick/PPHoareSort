@@ -2,11 +2,11 @@
 //void IHoaraSort(int*&,const int);
 
 
-void hoaraSort(int* &arr, int first, int last){
+void hoaraSort(double* &arr, int first, int last){
 
     int leftIndex = first,
-        rightIndex = last,
-        tmp,
+        rightIndex = last;
+    double tmp,
         x = arr[(first + last) / 2];
 
     do {
@@ -34,6 +34,6 @@ void hoaraSort(int* &arr, int first, int last){
        hoaraSort(arr, first,rightIndex);
 }
 
-void IHoaraSort(int* &arr,const int sizeArr){
+void IHoaraSort(double* &arr,const int sizeArr){
     hoaraSort(arr,0,sizeArr-1);
 }

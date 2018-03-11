@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
       cout << argv[0] << "\n  ERROR: can not open '"<<argv[1]<<"'\n";
       exit(1);
   }
-  int curNum;
+  double curNum;
 
   int size=0;
   inFile>>size;

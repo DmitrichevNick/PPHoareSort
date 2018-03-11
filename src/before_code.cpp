@@ -24,14 +24,14 @@ int main(int argc, char* argv[])
      cout << argv[0] << "\n  ERROR: can not open '"<<argv[2]<<"'\n\n";
      exit(2);
      }
-   int N = 0,
-       *numbers = NULL;
-   if((fread(&N, sizeof(int), 1, fIn)) != 1) {
+   int N = 0;
+   double *numbers = NULL;
+   if((fread(&N, sizeof(N), 1, fIn)) != 1) {
      cout << argv[0] << "\n  ERROR: can not read the size of the array from 'numbers.in'\n\n";
      exit(3);
      }
    else {
-       numbers = new int[N];
+       numbers = new double[N];
     if (numbers == NULL || (fread(numbers, sizeof(*numbers), N, fIn)) != N) {
        cout << argv[0] << "\n  ERROR: can not read the array from '"<<argv[1]<<"'\n\n";
        if (numbers!=NULL)
