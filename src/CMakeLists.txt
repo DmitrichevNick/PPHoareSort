@@ -13,4 +13,4 @@ add_library(${PROJECT_NAME}seq STATIC "sol.cpp")
 add_executable(${PROJECT_NAME} "before_code.cpp")
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}seq)
-target_compile_features(${GEN_PRO_NAME} PUBLIC cxx_std_17)
+#target_compile_features(${GEN_PRO_NAME} PUBLIC cxx_std_17)
