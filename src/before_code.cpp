@@ -26,6 +26,8 @@ int main(int argc, char* argv[])
      }
    int N = 0;
    double *numbers = NULL;
+   double trash=0;
+   fread(&trash, sizeof(trash), 1, fIn);
    if((fread(&N, sizeof(N), 1, fIn)) != 1) {
      cout << argv[0] << "\n  ERROR: can not read the size of the array from 'numbers.in'\n\n";
      exit(3);
@@ -77,6 +79,6 @@ int main(int argc, char* argv[])
      exit(7);
      }
    delete[] numbers;
-    cout<< argv[0]<<"\n  OK\n";
+    cout<< argv[0]<<"\n OK\n";
    return 0;
 }

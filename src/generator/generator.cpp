@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
       exit(1);
   }
   int N = 0;
+  FILE* outFile=fopen(((argc==3)?argv[2]:argv[1]),"wb");
   if (argc == 3) {
       if ((N = atoi(argv[1])) < 0) {
         cout << argv[1] << "\n  ERROR: the size has to be more than 0\n";
@@ -30,12 +31,14 @@ int main(int argc, char* argv[]) {
       std::uniform_int_distribution<int> distribution(0,2000000);
       N = distribution(generator);
   }
-  double* ar = genFunc(N);
 
-  FILE* outFile=fopen(((argc==3)?argv[2]:argv[1]),"wb");
+  double* ar = genFunc(N);
+  double trash=0;
+  fwrite(&trash,sizeof(trash),1,outFile);
   fwrite(&N,sizeof(N),1,outFile);
   fwrite(ar,sizeof(*ar),N,outFile);
 
   delete[] ar;
+  cout << argv[0] << "\n OK\n";
   return 0;
 }

@@ -21,6 +21,12 @@ int main(int argc, char* argv[])
   }
   double curNum;
 
+
+
+  double trash=0;
+  inFile >> trash; // need it
+  fwrite(&trash, sizeof(trash), 1, outFile);
+
   int size=0;
   inFile>>size;
   fwrite(&size,sizeof(curNum),1,outFile);
