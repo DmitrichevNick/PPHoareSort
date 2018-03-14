@@ -1,9 +1,10 @@
-#include "classResult.cpp"
+#include <iostream>
+#include "classResult.h"
 
 int main (int argc, char* argv[])
 {
    if (argc != 3) {
-      //cout << argv[0] << "\n  ERROR: not enough arguments\n";
+      std::cout << argv[0] << "\n  ERROR: not enough arguments\n";
       exit(1);
    }
 
