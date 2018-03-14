@@ -15,7 +15,7 @@ double* genFunc(const int N){
 using namespace std;
 
 int main(int argc, char* argv[]) {
-  if (argc == 3 || argc == 2) {
+  if (argc != 3 && argc != 2) {
       cout << argv[0] << "\n  ERROR: not enough arguments\n";
       exit(1);
   }
