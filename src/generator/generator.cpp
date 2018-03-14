@@ -1,7 +1,6 @@
 #include <iostream>
 #include <random>
 #include <chrono>
-#include "genfunc.cpp"
 
 double* genFunc(const int N){
   double* ar=new double[N];
