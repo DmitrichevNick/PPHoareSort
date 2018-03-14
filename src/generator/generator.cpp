@@ -15,7 +15,7 @@ double* genFunc(const int N){
 using namespace std;
 
 int main(int argc, char* argv[]) {
-  if (argc != 3 && argc != 2) {
+  if (argc == 3 || argc == 2) {
       cout << argv[0] << "\n  ERROR: not enough arguments\n";
       exit(1);
   }
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
   }
   double* ar = genFunc(N);
 
-  FILE* outFile=fopen(argv[2],"wb");
+  FILE* outFile=fopen(((argc==3)?argv[2]:argv[1]),"wb");
   fwrite(&N,sizeof(N),1,outFile);
   fwrite(ar,sizeof(*ar),N,outFile);
 
