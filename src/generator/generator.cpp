@@ -14,31 +14,32 @@ double* genFunc(const int N){
 
 using namespace std;
 
+int n_tests[] = {0,1,2,3,5,10,55,100,555,1000,5555,10000,55555,100000,555555,
+                 1000000,5555555,10000000,55555555,100000000,111111111};
+
+
 int main(int argc, char* argv[]) {
-  if (argc != 3 && argc != 2) {
-      cout << argv[0] << "\n  ERROR: not enough arguments\n";
+  if (argc != 3) {
+      cerr << argv[0] << " -> ERROR: not enough arguments\n";
       exit(1);
   }
-  int N = 0;
-  FILE* outFile=fopen(((argc==3)?argv[2]:argv[1]),"wb");
-  if (argc == 3) {
-      if ((N = atoi(argv[1])) < 0) {
-        cout << argv[1] << "\n  ERROR: the size has to be more than 0\n";
-        exit(1);
-      }
-  } else {
-      std::default_random_engine generator(time(0));
-      std::uniform_int_distribution<int> distribution(0,2000000);
-      N = distribution(generator);
+
+  FILE* outFile = NULL;
+  if ((outFile = fopen(argv[2],"wb"))==NULL){
+      cerr << argv[0] << " -> ERROR: can not open '"<<argv[2]<<"'\n";
+      exit(1);
   }
 
+  int N = n_tests[atoi(argv[1])];
   double* ar = genFunc(N);
-  double trash=0;
+  double trash=0; // need to be canon
+
   fwrite(&trash,sizeof(trash),1,outFile);
   fwrite(&N,sizeof(N),1,outFile);
   fwrite(ar,sizeof(*ar),N,outFile);
 
+  cout << argv[0] << " -> OK\n";
+
   delete[] ar;
-  cout << argv[0] << "\n OK\n";
   return 0;
 }
