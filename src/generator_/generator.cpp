@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
   }
 
   if (atoi(argv[1])>23 || atoi(argv[1])<0){
-      cerr << argv[1] << " -> ERROR: have to be >= 0 and <=23\n";
+      cerr << argv[0] << " -> ERROR: first parameter has to be >= 0 and <=23\n";
       exit(1);
   }
 
