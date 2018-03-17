@@ -9,13 +9,14 @@ before_script:
 script:
   - cmake ..
   - make
-  - cd src/generator
+  - cd src
+  - cp checker/checker ./
+  - cp generator/generator ./
+  - cp solver/solver ./
+  - cp typerANDviewer/typer ./
+  - cp typerANDviewer/viewer ./
   - ./generator 8 out
-  - cd ../
-  - cp generator/out ./
   - ./solver out nextout
-  - cp nextout typerANDviewer
-  - cd typerANDviewer
   - ./viewer nextout watchout
   - echo | cat watchout
  
