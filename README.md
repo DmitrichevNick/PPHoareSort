@@ -18,7 +18,7 @@
 |  
 |---- tests
 
-### В папках `src`, `tests` находятся свои README.md
+### В папке `src` находится свой README.md
 
 ### genTests.bat 
 
