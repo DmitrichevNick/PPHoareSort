@@ -12,8 +12,8 @@
 |  
 |---- src  
 |     |---- checker_  
-|     |---- generator_
-|     |---- solver_
+|     |---- generator_ 
+|     |---- solver_ 
 |     |---- typerANDviewer      
 |  
 |---- tests
