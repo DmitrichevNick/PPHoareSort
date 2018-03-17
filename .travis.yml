@@ -10,9 +10,9 @@ script:
   - cmake ..
   - make
   - cd src
-  - cp checker/checker ./
-  - cp generator/generator ./
-  - cp solver/solver ./
+  - cp checker_/checker ./
+  - cp generator_/generator ./
+  - cp solver_/solver ./
   - cp typerANDviewer/typer ./
   - cp typerANDviewer/viewer ./
   - ./generator 8 out
