@@ -4,7 +4,7 @@
 int main (int argc, char* argv[])
 {
    if (argc != 2) {
-      cerr << argv[0] << " -> ERROR: not enough arguments\n";
+      std::cout << argv[0] << " -> ERROR: not enough arguments\n";
       exit(1);
    }
 
@@ -38,6 +38,7 @@ int main (int argc, char* argv[])
            result=false;
            break;
          }
+         prevNum=curNum;
      }
 
      if (result)
