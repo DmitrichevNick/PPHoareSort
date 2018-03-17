@@ -15,12 +15,17 @@ double* genFunc(const int N){
 using namespace std;
 
 int n_tests[] = {0,1,2,3,5,10,10,55,100,100,555,1000,
-                 1000,5555,10000,10000,55555,100000,100000,555555,1000000,1000000};
+                 1000,5555,10000,10000,55555,100000,100000,555555,1000000,1000000, 5555555,10000000};
 
 
 int main(int argc, char* argv[]) {
   if (argc != 3) {
       cerr << argv[0] << " -> ERROR: not enough arguments\n";
+      exit(1);
+  }
+
+  if (atoi(argv[1])>23 || atoi(argv[1])<0){
+      cerr << argv[1] << " -> ERROR: have to be >= 0 and <=23\n";
       exit(1);
   }
 
