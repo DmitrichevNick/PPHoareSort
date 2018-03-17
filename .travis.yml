@@ -19,5 +19,7 @@ script:
   - ./solver out nextout
   - ./viewer nextout watchout
   - echo | cat watchout
+  - ./checker nextout
+  - echo | cat result.txt
  
   
